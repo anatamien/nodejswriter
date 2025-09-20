@@ -4,31 +4,70 @@ import { Link } from 'react-router';
 function Home() {
   const features = [
     {
-      icon: '📚',
+      icon: (
+        <svg width="48" height="48" viewBox="0 0 100 100" fill="currentColor">
+          <rect x="20" y="25" width="60" height="50" rx="4"/>
+          <rect x="30" y="35" width="40" height="3"/>
+          <rect x="30" y="45" width="40" height="3"/>
+          <rect x="30" y="55" width="30" height="3"/>
+        </svg>
+      ),
       title: 'Interactive Learning',
       description: 'Theory cards with practical examples and visual diagrams',
       link: '/learn'
     },
     {
-      icon: '💻',
+      icon: (
+        <svg width="48" height="48" viewBox="0 0 100 100" fill="currentColor">
+          <rect x="15" y="20" width="70" height="50" rx="4"/>
+          <rect x="20" y="15" width="60" height="5" rx="2"/>
+          <rect x="25" y="30" width="20" height="3"/>
+          <rect x="25" y="38" width="30" height="3"/>
+          <rect x="25" y="46" width="25" height="3"/>
+          <circle cx="70" cy="40" r="8"/>
+        </svg>
+      ),
       title: 'Code Practice',
       description: 'Built-in editor to practice Node.js concepts',
       link: '/practice'
     },
     {
-      icon: '❓',
+      icon: (
+        <svg width="48" height="48" viewBox="0 0 100 100" fill="currentColor">
+          <circle cx="50" cy="35" r="20"/>
+          <rect x="45" y="20" width="10" height="20"/>
+          <circle cx="50" cy="65" r="5"/>
+        </svg>
+      ),
       title: 'Knowledge Quiz',
       description: 'Test your understanding with interactive quizzes',
       link: '/quiz'
     },
     {
-      icon: '🗺️',
+      icon: (
+        <svg width="48" height="48" viewBox="0 0 100 100" fill="currentColor">
+          <circle cx="20" cy="20" r="8"/>
+          <circle cx="50" cy="40" r="8"/>
+          <circle cx="80" cy="60" r="8"/>
+          <line x1="28" y1="28" x2="42" y2="32" stroke="currentColor" strokeWidth="3"/>
+          <line x1="58" y1="48" x2="72" y2="52" stroke="currentColor" strokeWidth="3"/>
+          <rect x="15" y="70" width="70" height="15" rx="3"/>
+        </svg>
+      ),
       title: 'Learning Roadmap',
       description: 'Step-by-step progression from basics to advanced',
       link: '/roadmap'
     },
     {
-      icon: '🤖',
+      icon: (
+        <svg width="48" height="48" viewBox="0 0 100 100" fill="currentColor">
+          <circle cx="50" cy="45" r="25"/>
+          <circle cx="40" cy="35" r="4"/>
+          <circle cx="60" cy="35" r="4"/>
+          <path d="M 35 55 Q 50 70 65 55" stroke="currentColor" strokeWidth="3" fill="none"/>
+          <rect x="45" y="70" width="10" height="20" rx="5"/>
+        </svg>
+      ),
       title: 'AI Assistant',
       description: 'Get instant help and explanations',
       link: '/assistant'
@@ -85,7 +124,7 @@ function Home() {
               className="glass-morphism p-8 rounded-xl hover:scale-105 transition-all duration-300 group animate-float"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="text-6xl mb-4 group-hover:animate-pixel-bounce">
+              <div className="text-emerald-400 mb-4 group-hover:animate-pixel-bounce">
                 {feature.icon}
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>

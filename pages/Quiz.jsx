@@ -89,8 +89,24 @@ function Quiz() {
       <div className="min-h-screen px-4 py-8">
         <div className="max-w-4xl mx-auto">
           <div className="glass-morphism-dark p-8 rounded-xl text-center">
-            <div className="text-6xl mb-6">
-              {percentage >= 80 ? '🎉' : percentage >= 60 ? '👍' : '📚'}
+            <div className="flex justify-center mb-6">
+              {percentage >= 80 ? (
+                <svg width="80" height="80" viewBox="0 0 100 100" className="text-yellow-400">
+                  <polygon points="50,10 60,40 90,40 70,60 80,90 50,70 20,90 30,60 10,40 40,40" fill="currentColor"/>
+                </svg>
+              ) : percentage >= 60 ? (
+                <svg width="80" height="80" viewBox="0 0 100 100" className="text-green-400">
+                  <circle cx="50" cy="50" r="40" fill="currentColor"/>
+                  <polyline points="30,50 45,65 70,35" stroke="white" strokeWidth="8" fill="none"/>
+                </svg>
+              ) : (
+                <svg width="80" height="80" viewBox="0 0 100 100" className="text-blue-400">
+                  <rect x="20" y="25" width="60" height="50" rx="4" fill="currentColor"/>
+                  <rect x="30" y="35" width="40" height="3" fill="white"/>
+                  <rect x="30" y="45" width="40" height="3" fill="white"/>
+                  <rect x="30" y="55" width="30" height="3" fill="white"/>
+                </svg>
+              )}
             </div>
             
             <h2 className="text-4xl font-bold text-white mb-4">Quiz Completed!</h2>

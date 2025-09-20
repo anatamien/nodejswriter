@@ -66,8 +66,19 @@ function QuizCard({ question, options, correctAnswer, explanation, onAnswer }) {
       {showResult && (
         <div className={`p-4 rounded-lg ${isCorrect ? 'bg-green-500/20' : 'bg-red-500/20'}`}>
           <div className="flex items-center gap-2 mb-2">
-            <span className={`text-lg ${isCorrect ? 'text-green-400' : 'text-red-400'}`}>
-              {isCorrect ? '✅' : '❌'}
+            <span className={`${isCorrect ? 'text-green-400' : 'text-red-400'}`}>
+              {isCorrect ? (
+                <svg width="20" height="20" viewBox="0 0 100 100" fill="currentColor">
+                  <circle cx="50" cy="50" r="40"/>
+                  <polyline points="30,50 45,65 70,35" stroke="white" strokeWidth="8" fill="none"/>
+                </svg>
+              ) : (
+                <svg width="20" height="20" viewBox="0 0 100 100" fill="currentColor">
+                  <circle cx="50" cy="50" r="40"/>
+                  <line x1="30" y1="30" x2="70" y2="70" stroke="white" strokeWidth="8"/>
+                  <line x1="70" y1="30" x2="30" y2="70" stroke="white" strokeWidth="8"/>
+                </svg>
+              )}
             </span>
             <span className={`font-bold ${isCorrect ? 'text-green-400' : 'text-red-400'}`}>
               {isCorrect ? 'Correct!' : 'Incorrect'}
